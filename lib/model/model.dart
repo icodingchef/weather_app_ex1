@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 
 class Model {
-  Widget getWeatherIcon(int condition) {
+  Widget? getWeatherIcon(int condition) {
     if (condition < 300) {
       return SvgPicture.asset(
         'svg/climacon-colud_lightning.svg',
@@ -32,15 +32,31 @@ class Model {
     }
   }
 
-  Widget getAirIcon(int grade) {
+  Widget? getAirIcon(int? grade) {
     if (grade == 1) {
-      return Image.asset('images/good.png');
+      return Image.asset(
+        'images/good.png',
+        width: 37,
+        height: 35,
+      );
     } else if (grade == 2) {
-      return Image.asset('images/fair.png');
+      return Image.asset(
+        'images/fair.png',
+        width: 37,
+        height: 35,
+      );
     } else if (grade == 3) {
-      return Image.asset('images/moderate.png');
+      return Image.asset(
+        'images/moderate.png',
+        width: 37,
+        height: 35,
+      );
     } else if (grade == 4) {
-      return Image.asset('images/poor.png');
+      return Image.asset(
+        'images/poor.png',
+        width: 37,
+        height: 35,
+      );
     } else if (grade == 5) {
       return Image.asset(
         'images/bad.png',
@@ -50,38 +66,26 @@ class Model {
     }
   }
 
-  Widget airIndex(int index) {
+  Widget? airIndex(int? index) {
     if (index == 1) {
       return Text(
-        '매우좋음',
-        style: TextStyle(
-          color: Colors.indigo,
-          fontWeight: FontWeight.bold
-        ),
+        '"매우좋음"',
+        style: TextStyle(color: Colors.indigo, fontWeight: FontWeight.bold),
       );
     } else if (index == 2) {
       return Text(
-        '좋음',
-        style: TextStyle(
-          color: Colors.indigo,
-          fontWeight: FontWeight.bold
-        ),
+        '"좋음"',
+        style: TextStyle(color: Colors.indigo, fontWeight: FontWeight.bold),
       );
     } else if (index == 3) {
       return Text(
-        '보통',
-        style: TextStyle(
-          color: Colors.green,
-          fontWeight: FontWeight.bold
-        ),
+        '"보통"',
+        style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold),
       );
     } else if (index == 4) {
       return Text(
-        '나쁨',
-        style: TextStyle(
-          color: Colors.redAccent,
-          fontWeight: FontWeight.bold
-        ),
+        '"나쁨"',
+        style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold),
       );
     } else if (index == 5) {
       return Text(

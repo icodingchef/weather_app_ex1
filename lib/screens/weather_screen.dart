@@ -17,14 +17,14 @@ class WeatherScreen extends StatefulWidget {
 
 class _WeatherScreenState extends State<WeatherScreen> {
   Model model = Model();
-  String cityName;
-  int temp;
-  String des;
-  Widget icon;
-  Widget pollution;
-  Widget quality;
-  double air;
-  double air2;
+  String? cityName;
+  int? temp;
+  String? des;
+  Widget? icon;
+  Widget? pollution;
+  Widget? quality;
+  double? air;
+  double? air2;
   var date = DateTime.now();
 
   @override
@@ -165,7 +165,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           ),
                           Row(
                             children: [
-                              icon,
+                              icon!,
                               SizedBox(
                                 width: 10,
                               ),
@@ -205,11 +205,11 @@ class _WeatherScreenState extends State<WeatherScreen> {
                             SizedBox(
                               height: 10.0,
                             ),
-                            pollution,
+                            pollution!,
                             SizedBox(
                               height: 5.0,
                             ),
-                            quality,
+                            quality!,
                             // Text(
                             //   '$air',
                             //   style: GoogleFonts.lato(
